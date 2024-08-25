@@ -16,7 +16,7 @@ How many attempts would you like to have?  """))
                 if self.max_attempts <= 0:
                     print("""
 Please enter a positive number.""")
-                elif self.max_attempts > 10:
+                elif self.max_attempts >= 10:
                     print("""
 It's too easy to choose a number! Please select a number of attempts up to 10.""")
                 else:
