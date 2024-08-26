@@ -4,7 +4,7 @@ import random
 class GuessingGame(object):
 
     def __init__(self):
-        self.rand = random.randint(1, 10)
+        self.rand = 0
         self.max_attempts = 0
         self.attempts = 0
 
@@ -25,7 +25,8 @@ It's too easy to choose a number! Please select a number of attempts up to 10.""
                 print("""
 Please enter a valid number.""")
 
-    def get_user_input(self):
+    @staticmethod
+    def get_user_input():
         while True:
             inp = input("""
 Could you enter an integer to guess my number?
@@ -70,7 +71,8 @@ It's not a number, please enter an integer.""")
                 print(f"Sorry, you've reached the maximum number of attempts!\nMy number was: {self.rand}!")
                 return True
 
-    def play_again(self):
+    @staticmethod
+    def play_again():
         play_again = input("""
 Do you want to play again? (Yes or No): """).lower()
         return play_again in ['yes', 'y']
